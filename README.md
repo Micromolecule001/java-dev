@@ -3,7 +3,7 @@
 Group: IPZ-34ms Var №33 \
 Name: Boyko Dmitriy
 
-[!NOTE]
+**_NOTE:_**
 All commands should be used in root directory
 Usage command: 
 
