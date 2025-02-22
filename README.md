@@ -5,13 +5,14 @@ Name: Boyko Dmitriy
 
 [!NOTE]
 All commands should be used in root directory
+Usage command: 
 
 Compiling
 ```
     javac -d apps/TextAnalyzer/out $(find apps/TextAnalyzer/src -name "*.java")
 ```
 
-Usage command: 
+Starting
 ```
     java -cp apps/TextAnalyzer/out com.textanalyzer.Launcher
 ```
