@@ -3,8 +3,9 @@
 Group: IPZ-34ms Var №33 \
 Name: Boyko Dmitriy
 
-**_NOTE:_**
+[!NOTE]
 All commands should be used in root directory
+
 Usage command: 
 
 Compiling
