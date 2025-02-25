@@ -1,12 +1,15 @@
 package com.textanalyzer.ui;
 
 import javax.swing.*;
+
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.io.IOException;
+import java.io.File;
 
 public class TextAnalyzerUI extends JPanel {
     private JTextArea textArea;
@@ -21,11 +24,11 @@ public class TextAnalyzerUI extends JPanel {
         JScrollPane scrollPane = new JScrollPane(textArea);
 
         // Create button
-        loadButton = new JButton("Load Text");
+        loadButton = new JButton("Choose file to Analize");
         loadButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                loadText();
+                ChooseFile();
             }
         });
 
@@ -34,12 +37,19 @@ public class TextAnalyzerUI extends JPanel {
         add(loadButton, BorderLayout.SOUTH);
     }
 
-    private void loadText() {
-        try {
-            String content = new String(Files.readAllBytes(Paths.get("apps/TextAnalyzer/input/INPUT.TXT")));
-            textArea.setText(content);
-        } catch (IOException e) {
-            textArea.setText("Error loading file: " + e.getMessage());
+    private void ChooseFile() {
+        System.out.println("Entry \n");
+        JFileChooser file_upload = new JFileChooser();
+        file_upload.showOpenDialog(null);
+        System.out.println("Create file \n");
+
+        int res = file_upload.showOpenDialog(null);
+        System.out.println(res);
+
+        if (res == JFileChooser.APPROVE_OPTION) {
+            System.out.println("Entry #2 file_path: \n");
+            File file_path = new File(file_upload.getSelectedFile().getAbsolutePath());
+            System.out.println(file_path);
         }
     }
 }
