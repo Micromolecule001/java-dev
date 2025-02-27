@@ -2,7 +2,6 @@ package com.textanalyzer.ui;
 
 import javax.swing.*;
 
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -25,6 +24,8 @@ public class TextAnalyzerUI extends JPanel {
 
         // Create button
         loadButton = new JButton("Choose file to Analize");
+        loadButton.setPreferredSize(new Dimension(5,100));
+        loadButton.setFont(new Font("Terminus", Font.BOLD, 24));
         loadButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
